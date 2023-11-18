@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&family=Sacramento&display=swap');
+
+:root {
+    --dark-blue: #27374D;
+    --medium-blue: #526D82;
+    --light-blue: #9DB2BF;
+    --gray: #DDE6ED;
+    --title-font: 'Montserrat', sans-serif;
+    --cursive-font: 'Sacramento', cursive;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9998;
+
+    @media (max-width: 900px) {
+        justify-content: flex-end;
+    }
+}
+
+header ul {
+    display: flex;
+    gap: 1rem;
+
+    @media (max-width: 900px) {
+        gap: .35rem;
+    }
+}
+
+header ul li a {
+    font-family: var(--cursive-font);
+    font-weight: 500;
+    font-size: 30px;
+    text-decoration: none;;
+    color: var(--gray);
+    padding: 20px 10px 15px 10px;  
+
+    @media (max-width: 900px) {
+        font-size: 1rem;
+        font-family: inherit;
+        padding: 5px;
+
+    }
+}
+
+header ul li a:hover {
+    color: var(--light-blue);
+    transition: color .3s;
+}
+
+h2 {
+    font-size: 80px;
+
+    @media (max-width: 700px) {
+        font-size: 2.5rem !important;
+    }
+}
+
+#main-link {
+    color: var(--dark-blueblue);
+    font-family: var(--title-font);
+    font-weight: 800;
+    background-color: var(--light-blue);
+}
+
+#main-link:hover {
+    color: var(--dark-blue);
+    background-color: var(--gray);
+    transition: background-color .3s;
+}
+
+
+.logo img{
+    height: 44px;
+    width: 100px;
+    margin: 10px 0 10px 20px;
+}
+
+.remove-logo {
+    display: none;
+}
+
+header,
+.who-am-i {
+    background-color: var(--dark-blue);
+}
+
+img {
+    width: 100%;
+}
+
+#container-text {
+    width: 100%;
+}
+
+.who-am-i {
+    display: flex;
+    align-items: center;
+    height: 500px;
+    width: 100%;
+}
+
+.who-am-i #container-text {
+    margin-left: 20px;
+    color: var(--gray);
+}
+
+.who-am-i #container-text h2 {
+    font-family: var(--cursive-font);
+    margin-bottom: 15px;
+ }
+
+.who-am-i #container-text > p {
+    font-family: var(--title-font);
+    font-size: 20px;
+}
+
+#expand {
+    margin-top: 20px;
+    padding: 10px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 5px;
+    border: solid 1px var(--dark-blue);
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+    cursor: pointer;
+}
+
+#expand:hover {
+    background-color: var(--gray);
+    transition: background-color .3s;
+}
+
+.my-story--disabled {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: 1s ease-in-out;
+}
+
+.my-story--enabled {
+    display: flex;
+    transition: 1s ease-in-out;
+}
+
+
+
+.modal {
+    padding: 16px;
+    border-radius: 6px;
+    background-color: var(--gray);
+    width: 600px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @media screen and(min: 500px) {
+        width: 400px;
+        height: 450px;
+    }
+}
+
+.close-modal {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    color: var(--dark-blue);
+
+    > span:hover {
+        cursor: pointer;
+    }
+}
+
+.content-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--title-font);
+    color: var(--dark-blue);
+}
+
+.courses {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 60px;
+    background-color: var(--medium-blue);
+}
+
+#courses-title, #contact-me-title {
+    background-color: var(--medium-blue);
+    font-family: var(--cursive-font);
+    color: var(--gray);
+    text-align: center;
+    padding-top: 15px;
+}
+
+.cards-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 4.5rem;
+    flex-wrap: wrap;
+}
+
+.card-course {
+    font-family: var(--title-font);
+    color: var(--dark-blue);
+    width: 300px;
+    height: 360px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--light-blue);
+    cursor: pointer;
+}
+
+.card-course:hover {
+    background-color: var(--gray);
+    transform: scale(1.1);
+    transition: background-color .3s;
+}
+
+.course-name {
+    font-size: 24px;
+}
+
+.course-text {
+    font-size: 15px;
+}
+
+.container-cards {
+    @media screen and(min:600px) {
+        > div {
+            width: 100%;
+        }
+    }
+}
+
+.container-cards img {
+    height: 200px;
+    padding-bottom: 10px;
+    div {
+        width: 100%;
+    }
+}
+
+.sts-depo-container {
+    background-color: var(--light-blue);
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.sts-depo {
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.students {
+    padding: 60px;
+    background-color: var(--light-blue);
+}
+
+.students-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#depo-title {
+    font-family: var(--cursive-font);
+    color: var(--gray);
+    text-align: center;
+    padding-top: 15px;
+}
+
+.depo-picture {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--medium-blue);
+    margin: 20px 5px 10px 5px;
+}
+
+figure {
+    text-align: center;
+}
+
+figure figcaption {
+    font-size: 16px;
+    color: var(--dark-blue);
+    font-family: var(--title-font);
+    margin: 0;
+    text-align: center;
+}
+
+.depo-print {
+    margin: 15px 10px 15px 10px;
+    background-color: white;
+    border: 3px solid var(--medium-blue);
+    border-radius: 6px;
+}
+
+.contact-me {
+    padding-top: 20px;
+    height: 500px;
+    width: 100%;
+    background-color: var(--gray);
+    color: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+}
+
+.contact-me a {
+    font-size: 30px;
+    font-family: var(--title-font);
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+
+    @media (max-width: 700px) {
+        font-size: 1rem;
+    }
+}
+
+#contact-me-title {
+    padding-top: 150px;
+    background-color: var(--gray);
+    color: var(--dark-blue);
+}
+
+footer {
+    height: 100px;
+    background-color: var(--dark-blue);
+    text-align: center;
+}
+
+.logo-footer img {
+    height: 90px;
+    width: 100px;
+}
